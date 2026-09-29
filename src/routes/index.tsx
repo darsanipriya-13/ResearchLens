@@ -38,7 +38,7 @@ const stages = [
 function Dashboard() {
   const [text, setText] = useState("");
   const [stage, setStage] = useState(-1);
-  const { addSearch, history } = useStore();
+  const { addSearch, history, setCurrent } = useStore();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -131,7 +131,3 @@ function Dashboard() {
   }
 }
 
-// small helper hook usage inside component
-function useSetCurrent() { return useStore().setCurrent; }
-let setCurrent: ReturnType<typeof useSetCurrent> = () => {};
-export function _Bind() { setCurrent = useSetCurrent(); return null; }
