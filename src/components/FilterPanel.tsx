@@ -13,7 +13,7 @@ export const emptyFilters: Filters = { years: [], methods: [], datasets: [], ava
 const groups: { key: keyof Filters; label: string; options: { value: string; label: string }[] }[] = [
   { key: "years", label: "Publication Year", options: ["2026", "2025", "2024", "2023", "before"].map((v) => ({ value: v, label: v === "before" ? "Before 2023" : v })) },
   { key: "methods", label: "Method / Model", options: ["BERT", "LSTM", "CNN", "Transformer", "RAG", "SVM", "Random Forest"].map((v) => ({ value: v, label: v })) },
-  { key: "datasets", label: "Dataset", options: [["fakenewsnet", "FakeNewsNet"], ["liar", "LIAR"], ["isot", "ISOT"], ["custom", "Custom Dataset"]].map(([value, label]) => ({ value, label })) },
+  { key: "datasets", label: "Dataset", options: ([["fakenewsnet", "FakeNewsNet"], ["liar", "LIAR"], ["isot", "ISOT"], ["custom", "Custom Dataset"]] as const).map(([value, label]) => ({ value: value as string, label: label as string })) },
   { key: "availability", label: "Availability", options: ["Open Access", "PDF Available", "GitHub Available", "Dataset Available"].map((v) => ({ value: v, label: v })) },
   { key: "sources", label: "Source", options: ["OpenAlex", "Semantic Scholar", "arXiv", "Crossref"].map((v) => ({ value: v, label: v })) },
 ];

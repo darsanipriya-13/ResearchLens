@@ -32,7 +32,7 @@ export async function analyzeProblem(query: string): Promise<SearchResult> {
     query,
     date: new Date().toISOString(),
     topic,
-    concepts: conceptMap[topic],
+    concepts: conceptMap[topic] ?? [],
     paperIds,
     repositoryIds: repositories.filter((r) => r.paperId && paperIds.includes(r.paperId)).map((r) => r.id),
     gapCount: researchGaps.length,

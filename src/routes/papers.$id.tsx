@@ -64,7 +64,7 @@ function PaperDetails() {
       <Tabs value={tab ?? "overview"} onValueChange={(v) => navigate({ search: { tab: v as (typeof tabs)[number] }, replace: true })} className="mt-6">
         <TabsList className="flex h-auto w-full flex-wrap justify-start">
           {[["overview", "Overview"], ["methodology", "Methodology"], ["dataset", "Dataset"], ["results", "Results"], ["limitations", "Limitations"], ["future", "Future Work"], ["implementation", "Implementation"], ["sources", "Sources"]].map(([v, l]) => (
-            <TabsTrigger key={v} value={v}>{l}</TabsTrigger>
+            <TabsTrigger key={v} value={v!}>{l}</TabsTrigger>
           ))}
         </TabsList>
 

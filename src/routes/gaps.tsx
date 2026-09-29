@@ -30,8 +30,8 @@ function GapsPage() {
     { label: "Existing Research", detail: `${set.length} papers`, icon: Database },
     { label: "Common Methods", detail: methods.slice(0, 2).map((m) => m[0]).join(", "), icon: Cpu },
     { label: "Common Limitations", detail: recurringLimitations[0], icon: AlertCircle },
-    { label: "Underexplored Areas", detail: researchGaps[0].title, icon: Compass },
-    { label: "Potential Direction", detail: researchGaps[1].title, icon: Sparkles },
+    { label: "Underexplored Areas", detail: researchGaps[0]?.title ?? "", icon: Compass },
+    { label: "Potential Direction", detail: researchGaps[1]?.title ?? "", icon: Sparkles },
   ];
 
   return (
