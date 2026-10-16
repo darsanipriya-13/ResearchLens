@@ -43,4 +43,4 @@ Millions of groundbreaking academic papers are published every year. However:
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/darsanipriya-13/ResearchLens.git
-cd researchlens
+cd ResearchLens
